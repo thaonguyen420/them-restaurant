@@ -1,2 +1,63 @@
-{% render 'hero' %}
-<!-- ANCHOR render hiển thị đoạn mã  -->
+{% render 'hore' width {
+    settings:section.settings,
+    id:section.id
+}
+%}
+{% schema %}
+{
+    "name": "hore",
+    "settings": [
+        {
+            "type":"text",
+            "id":"heading",
+            "label":"Heading",
+            "default":"New heading"
+        },
+        {
+            "type": "textarea",
+            "id": "copy",
+            "label":"Body Copy",
+            "default":"I'm baby drinking vinegar mumblecore glossier crucifix sartorial austin before they sold out fanny pack farm-to-table art party cray lo-fi ramps"
+        },{
+            "type":"url",
+            "id": "link_url",
+            "label":"Link URL"
+        },{
+            "type":"text",
+            "id":"link_text",
+            "label":"Link Text",
+            "default": "Click"
+        },{
+            "type":"image_picker",
+            "id":"small_image",
+            "label":"Small Image",
+            "info": "Disnensions: 767x767"
+        }
+        ,{
+            "type":"image_picker",
+            "id":"large_image",
+            "label":"Large Image"        
+        },{
+            "type":"select",
+            "id":"aligment",
+            "label":"Aligment",
+            "default":"left",
+            "options": [
+                {
+                    "label":"left",
+                    "value":"left"
+                },{
+                    "label":"Center",
+                    "value":"center"
+                }
+            ]        
+        }
+    ],
+    "presets":[
+        {
+            "name":"hore",
+            "category":"Image w/text"
+        }
+    ]
+}
+{% endschema %}
