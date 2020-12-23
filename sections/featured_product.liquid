@@ -1,26 +1,31 @@
-<section class="featured_product">
-    <h2 class="featured_porduct__heading">
-        {{collection.title}}
-    </h2>
-    <div class="featured-product__items">
-        {% for product in collection[section.settings.collection].products %}
-            <p>{{ product.title }}</p>
-        {% endfor %}
-    </div>
+{% assign collection_handle = section.settings.collection %}
+{% assign product_handle = section.settings.product %}
+{% assign collection = collections['featured-prosd'] %}
+{% assign product = all_products[product_handle] %}
+
+<section class="featured_products">
+      <h2 class="featured_porduct__heading">
+        {{ collection.title }}
+    </h2> 
+  
+        {% render 'product-title' for collection.products as product %}
+
+    
 </section>
 {% schema %}
 {
-    "name":"Featured_Product",
+    "name":"Featured Prosd",
     "settings":[
         {
             "type":"collection",
             "id":"colection",
             "label":"colection"
         }
+      
     ],
     "presets":[
         {
-            "name":"Featured_Product",
+            "name":"Featured Prosd",
             "category":"Product delay"
         }
     ]
